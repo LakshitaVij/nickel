@@ -93,7 +93,7 @@
     try { video.pause(); } catch (e) {}
     state = { slide: 0, revealed: false, picked: null };
     render();
-    autoT = setTimeout(function () { reveal(null); }, 5000);
+    autoT = setTimeout(function () { reveal(null); }, 3000);
   }
 
   dot1.addEventListener('click', startGame);
