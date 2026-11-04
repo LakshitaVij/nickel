@@ -76,7 +76,7 @@
     clear();
     state.revealed = true; state.picked = id;
     render();
-    swipeT = setTimeout(goVideo, 3200);
+    swipeT = setTimeout(goVideo, 2000);
   }
 
   function goVideo() {
