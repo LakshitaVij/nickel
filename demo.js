@@ -27,7 +27,7 @@
       if (state.revealed) {
         var isBest = r.id === best.id, mine = state.picked === r.id;
         cls += (isBest ? ' good' : ' bad') + ' done' + (mine ? ' mine' : '');
-        tag = '<span class="tag">' + (isBest ? '✓ Best value' : '✕ Not the best') + '</span>';
+        tag = '<span class="tag">' + (isBest ? '✓ Best value' : '× Not the best') + '</span>';
         sub = r.label + ' · ' + money(r.price) + (mine ? ' · your pick' : '');
         big = cents(r.unit); lbl = 'per ' + UNIT;
         b.tabIndex = -1;
@@ -43,12 +43,12 @@
 
   function renderMsg() {
     if (state.slide === 1) {
-      msg.innerHTML = '<p class="v">Escrape does this on the page while you shop.</p><p class="d">Screen recording of the extension on a grocery site.</p>';
+      msg.innerHTML = '<p class="v">Nickel does this on the page while you shop.</p><p class="d">Screen recording of the extension on a grocery site.</p>';
     } else if (!state.revealed) {
       msg.innerHTML = '<p class="p1">Tap the one you think is cheapest per ' + UNIT + '. No tap? We\'ll answer in a few seconds.</p>';
     } else {
       var v;
-      if (state.picked === null) v = 'Escrape picks the ' + best.label + ': ' + cents(best.unit) + ' per ' + UNIT + '.';
+      if (state.picked === null) v = 'Nickel picks the ' + best.label + ': ' + cents(best.unit) + ' per ' + UNIT + '.';
       else if (state.picked === best.id) v = 'Good eye. The ' + best.label + ' is the cheapest per ' + UNIT + '.';
       else {
         var p = rows.filter(function (r) { return r.id === state.picked; })[0];
@@ -65,8 +65,8 @@
     slide2.setAttribute('aria-hidden', state.slide !== 1);
     dot1.setAttribute('aria-current', state.slide === 0);
     dot2.setAttribute('aria-current', state.slide === 1);
-    eyebrow.textContent = state.slide === 0 ? 'Try it · Oat milk' : 'Escrape in action';
-    title.textContent = state.slide === 0 ? 'Which one is the best value?' : 'Now watch Escrape do it.';
+    eyebrow.textContent = state.slide === 0 ? 'Try it · Oat milk' : 'Nickel in action';
+    title.textContent = state.slide === 0 ? 'Which one is the best value?' : 'Now watch Nickel do it.';
   }
 
   function render() { renderGame(); renderMsg(); renderChrome(); }
