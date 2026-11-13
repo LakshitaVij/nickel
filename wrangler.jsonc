@@ -1,0 +1,7 @@
+{
+  "name": "nickel",
+  "compatibility_date": "2026-11-04",
+  "observability": { "enabled": true },
+  "workers_dev": true,
+  "assets": { "directory": "." }
+}
